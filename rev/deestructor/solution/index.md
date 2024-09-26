@@ -144,9 +144,17 @@ for i in range(len(chunks)):
 print(flag)
 ```
 
+Running it gives the flag
+![image](https://github.com/user-attachments/assets/fff50e48-0a40-4cb6-89a5-341378949841)
 
+```
+Flag: csean-ctf{s1mpl3_x0r_encrypt10n_hidd3n!}
+```
 
+Now this way is all good but that's not the purpose as to why i created this
 
+If you take your time to research about Destructors in C you should basically get the general idea that it:
+- 
 
 
 
