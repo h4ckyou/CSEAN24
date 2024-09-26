@@ -60,6 +60,67 @@ Now we just rename the functions!
 
 That looks more like it!
 
+Now back to the method as to how we solve this!
+
+This program literally does nothing so what comes in mind is:
+- Is there a function somewhere that does something interesting?
+
+And due to this we can start looking through other functions and now the reason why we needed to rename this to the main function is to avoid looking through the whole functions available because "that my friend" is pain
+
+![image](https://github.com/user-attachments/assets/3d60d05a-c383-4242-9a0d-20fe08662a30)
+
+Just start clicking the other functions below main and boom the first one `sub_40181F` yields something interesting
+![image](https://github.com/user-attachments/assets/ef13ae26-c008-4c17-880f-10d442bf27d3)
+
+You can't view it's pseudocode because this is written in pure assembly and doesn't really do things like storing a value in a variable etc.
+
+Here's the disassembly:
+
+```asm
+push rbp
+mov rbp, rsp
+xor r8, r8
+mov r8, 0x637466
+xor rdi, rdi
+mov rdi, 0x63101107
+xor rdi, r8
+xor rdi, rdi
+mov rdi, 0x6e4e1712
+xor rdi, r8
+xor rdi, rdi
+mov rdi, 0x66180757
+xor rdi, r8
+xor rdi, rdi
+mov rdi, 0x6d131855
+xor rdi, r8
+xor rdi, rdi
+mov rdi, 0x5f1b4414
+xor rdi, r8
+xor rdi, rdi
+mov rdi, 0x5f061a05
+xor rdi, r8
+xor rdi, rdi
+mov rdi, 0x721a0412
+xor rdi, r8
+xor rdi, rdi
+mov rdi, 0x31531a39
+xor rdi, r8
+xor rdi, rdi
+mov rdi, 0x680a1002
+xor rdi, r8
+xor rdi, rdi
+mov rdi, 0x330d551b
+xor rdi, r8
+nop
+pop rbp
+retn
+```
+
+Ok so first it setups a new stack frame (standard stuffs) then it stores into the `r8` register the value `0x637466` and then it keeps moving some values into the `rdi` register and xors it with the `r8` register
+
+From this we can see that it basically does xor encryption with some values which keeps getting stored in the `rdi` register with a constant key which is in the `r8` register
+
+
 
 
 
