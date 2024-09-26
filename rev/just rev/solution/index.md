@@ -272,5 +272,21 @@ Where the encryption is as follows:
 
 Since our input is going to be passed into those following functions and compared against a hardcoded value, we need to reverse the operations of each function such that when we run it against the hardcoded value we would get the expected plaintext
 
+To do that we move backwards:
+- demangle bytes
+- reverses the content
+- swap adjacent bytes
 
+
+For the last two functions we don't need to make additional changes—reusing these functions accomplishes the same effect as reversing the data
+
+The only function of concern is the mangling of data
+
+To reverse the operation of rotate left we just apply rotate right and this is it's implementation:
+
+```c
+uint8 ror(uint8 a1, uint8 a2) {
+  return ((a1 >> a2) | (a1 << (8 - a2)));
+}
+```
 
