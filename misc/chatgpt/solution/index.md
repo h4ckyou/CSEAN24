@@ -37,3 +37,9 @@ Parsing them out yields this:
 ```
 RANDOM NOT RANDOM
 ```
+
+And now we just put it well in the flag format and that's the flag 🙂
+
+```
+Flag: csean-ctf{random_not_random}24
+```
