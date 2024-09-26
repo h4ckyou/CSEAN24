@@ -296,3 +296,47 @@ Or in python:
 def ror(value, shift):
     return (value >> shift) | (value << (8 - shift)) & 0xff
 ```
+
+Now how do we reverse the operation done based on if `var` is even or odd in the `mangle` function
+
+From looking at it at first it looks not too difficult to reverse
+
+For example when `var` is odd, this is the operation done
+
+```c
+v4 = tmp[i];
+v9 = (-99 - v4);
+v10[i] = -99 - v4;
+```
+
+We can rewrite this as:
+
+```
+x = -99 - tmp[i]
+```
+
+And basically we have `x` so we can recover `tmp[i]`:
+
+```
+x = -99 - tmp[i]
+x + 99 = -tmp[i]
+-tmp[i] = x + 99
+tmp[i] = -(x + 99)
+```
+
+You can also do same for when `var` is even:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
