@@ -15,7 +15,7 @@ Running it we see it does nothing?
 ![image](https://github.com/user-attachments/assets/1fb73a9a-179e-4623-b0d5-dc0472e42f47)
 
 There are two ways you can go about this:
-- Just checking the list of functions in IDA
+- Just "smartly" checking the list of available functions in IDA
 - Researching about "destructors in C"
 
 I'll start from the first one. Loading it into IDA we should get this
