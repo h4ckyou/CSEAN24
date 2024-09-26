@@ -340,7 +340,7 @@ Now because we've gotten a general idea on what it does so we will take a look a
 This is the part where it branches based on if `var` is even or odd
 ![image](https://github.com/user-attachments/assets/688af4bf-8bbd-4317-9eb8-3ff8d0cbcb73)
 
-```c
+```asm
 check:
   mov     eax, [rbp+var]
   and     eax, 1
