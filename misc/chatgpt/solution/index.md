@@ -27,3 +27,13 @@ np problem?
 ```
 
 Looking at the first line we can see a weird looking value
+
+At first it might seem like maybe some sort of cipher but that's not right
+
+If you notice it well you will see that there are so many reoccuring capitalized character
+
+Parsing them out yields this:
+
+```
+RANDOM NOT RANDOM
+```
