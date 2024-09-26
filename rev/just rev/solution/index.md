@@ -132,3 +132,6 @@ Now let's see example:
 If we give it:
 - abcd, the result should give: badc
 
+We can confirm by setting a breakpoint before the call to the function and seeing the modified value after this function is called
+![image](https://github.com/user-attachments/assets/fc646460-33cf-45bb-ba87-c61c5341d322)
+
