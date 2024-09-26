@@ -116,3 +116,19 @@ __int64 __fastcall sub_1169(char *buf, int len)
   return result;
 }
 ```
+
+Now that looks much better
+- It defines the tmp variable to be a pointer to the buf variable
+- It iterates through the length of the buf while incrementing the iterate by 2
+- It stores the current buf value into variable `v7` and then the next buf value into variable `v6`
+- Then it stores `v6` into `v8[i]` and `v7` into `v8[i + 1]`
+
+Then after it does this swap it would replace the values of `buf` to `v8`
+
+The conclusion we can draw from what this function does is that it performs a swap of adjacent bytes within the buffer
+
+Now let's see example:
+
+If we give it:
+- abcd, the result should give: badc
+
