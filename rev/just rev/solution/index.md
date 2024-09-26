@@ -292,7 +292,7 @@ uint8 ror(uint8 a1, uint8 a2) {
 
 Or in python:
 
-```
+```python
 def ror(value, shift):
     return (value >> shift) | (value << (8 - shift)) & 0xff
 ```
