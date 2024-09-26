@@ -303,7 +303,7 @@ From looking at it, it looks not too difficult to reverse
 
 For example when `var` is odd, this is the operation done
 
-```c
+```
 v4 = tmp[i];
 v9 = (-99 - v4);
 v10[i] = -99 - v4;
@@ -325,3 +325,28 @@ tmp[i] = -(x + 99)
 ```
 
 You can also do same for when `var` is even
+
+```
+v3 = rol((tmp[i] ^ 0x40), 4LL);
+v8 = (-3 - v3);
+v10[i] = -3 - v3;
+```
+
+Rewrite as:
+
+```
+x = -3 - rol((tmp[i] ^ 0x40), 4LL)
+```
+
+Recover `tmp[i]` because we know `x` and the operation is reversible
+
+```
+-3 - rol((tmp[i] ^ 0x40), 4LL) = x
+rol((tmp[i] ^ 0x40), 4LL) = 3 - x
+tmp[i] ^ 0x40 = ror((3 - x), 4)
+tmp[i] = ror((-3 - x), 4) ^ 0x40
+tmp[i] = ror(-(3 + x), 4) ^ 0x40
+```
+
+
+
