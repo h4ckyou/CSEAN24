@@ -244,5 +244,8 @@ __int64 __fastcall sub_134A(char *buf, int len)
 }
 ```
 
+- It creates a tmp variable which is a pointer to the buf passed as the first parameter
+- Iterates through the length of the buf and based on if variable `var` is even or odd, it modifies the value of the buf at that current index then increments `var`
+- If `var` is an even number then it calls function `sub_1255` passing `tmp[i] ^ 0x40` as the first parameter and `4` as the second parameter then it does some subtraction thingy else it just does some subtraction thingy on `tmp[i]`
 
 
