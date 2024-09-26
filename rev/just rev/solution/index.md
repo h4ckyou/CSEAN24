@@ -78,7 +78,7 @@ Now we need to figure out exactly what the three function does to our input:
 For the first function here's the decompilation
 ![image](https://github.com/user-attachments/assets/19c52fa6-ad03-4b1c-8658-5bb6efe4f1f2)
 
-This might look kinda hard to assimilate but from renaming function names and data types i got this
+This might look kinda hard to assimilate but from renaming variable names and data types i got this
 
 ```c
 __int64 __fastcall sub_1169(char *buf, int len)
