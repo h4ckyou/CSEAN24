@@ -200,6 +200,49 @@ For the last function here's the decompilation
 
 Yet again I renamed variable names and set the variables to the right data type
 
+```c
+__int64 __fastcall sub_134A(char *buf, int len)
+{
+  void *v2; // rsp
+  char v3; // al
+  char v4; // al
+  __int64 n; // [rsp+0h] [rbp-50h] BYREF
+  char *tmp; // [rsp+8h] [rbp-48h]
+  int v8; // [rsp+18h] [rbp-38h]
+  int v9; // [rsp+1Ch] [rbp-34h]
+  char *v10; // [rsp+20h] [rbp-30h]
+  __int64 v11; // [rsp+28h] [rbp-28h]
+  int j; // [rsp+34h] [rbp-1Ch]
+  int i; // [rsp+38h] [rbp-18h]
+  unsigned int var; // [rsp+3Ch] [rbp-14h]
+
+  tmp = buf;
+  HIDWORD(n) = len;
+  v11 = len - 1LL;
+  v2 = alloca(16 * ((len + 15LL) / 0x10uLL));
+  v10 = &n;
+  var = 0;
+  for ( i = 0; i < SHIDWORD(n); ++i )
+  {
+    if ( (var & 1) != 0 )
+    {
+      v4 = tmp[i];
+      v9 = (-99 - v4);
+      v10[i] = -99 - v4;
+    }
+    else
+    {
+      v3 = sub_1255((tmp[i] ^ 0x40), 4LL);
+      v8 = (-3 - v3);
+      v10[i] = -3 - v3;
+    }
+    ++var;
+  }
+  for ( j = 0; j < SHIDWORD(n); ++j )
+    tmp[j] = v10[j];
+  return var;
+}
+```
 
 
 
