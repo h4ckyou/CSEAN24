@@ -348,5 +348,21 @@ tmp[i] = ror((-3 - x), 4) ^ 0x40
 tmp[i] = ror(-(3 + x), 4) ^ 0x40
 ```
 
+With that said the reversed operation for is_even & is_odd are:
+- pt = ror(-(3 + enc), 4) ^ 0x40
+- pt = -(x + 99)
+
+
+Wrapping it up, we need to extract the hardcoded value we are comparing our transformed input to
+![image](https://github.com/user-attachments/assets/44cb2277-ca9c-4c3e-a92c-ec7e044d1429)
+
+Click on `Hex View-1`
+![image](https://github.com/user-attachments/assets/bdb4ca34-e276-4b67-856f-28e8296852d6)
+
+Now we just select the values and extract it `ALT + E`
+![image](https://github.com/user-attachments/assets/89fc99cb-3a52-4520-aa22-b7ca2ac457e2)
+
+Here's the final solve script
+
 
 
