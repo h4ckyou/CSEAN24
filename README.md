@@ -28,3 +28,6 @@ This repository hosts the **source code** and **writeups** for the challenges fr
 | [Ret2Win V1](pwn/ret2win1)                             | Binary Exploitation | Easy         | 96     |
 | [Ret2Win V2](pwn/ret2win2)                             | Binary Exploitation | Intermediate | 54     |
 | [Echo Chamber](pwn/echo%20chamber)                     | Binary Exploitation | Extreme      | 96     |
+
+
+The challenge difficulty was the rating implemented during the CTF
