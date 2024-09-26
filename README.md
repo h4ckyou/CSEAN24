@@ -1,6 +1,7 @@
 <div align="center">
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/2a5f3f1a-3a2c-41b0-ade1-81639345fd66)
+
 
 This repository hosts the **source code** and **writeups** for the challenges from [CSEAN CTF 2024][CTFd Instance].
 
