@@ -41,16 +41,31 @@ With this, we can conclude that the 2D array is made up of sublists, and each su
 - An index that determines where that character should be placed in the final message.
 
 
-But if you notice the whole structure you can see that the index is basically shuffled around, so we need to parse it well
+But if you notice the whole structure you can see that the indices are basically shuffled around, so we need to parse it well
 
+To do that we just need to sort the sublists by the second element (index) then we convert the hex strings to characters and arrange them in the correct order
 
+Here's my solution:
 
+```python
+import ast
 
+output = open("output.txt", "r").read()
+data = ast.literal_eval(output) 
+mapping = {}
 
+for i in data:
+    mapping[i[1]] = chr(int(i[0], 16))
 
+charset = sorted(mapping)
 
+decoded = ""
 
+for i in charset:
+    decoded += mapping[i]
 
+print(decoded)
+```
 
 
 
