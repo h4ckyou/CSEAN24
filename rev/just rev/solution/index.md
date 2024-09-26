@@ -330,7 +330,7 @@ The reason is because IDA didn't show the whole decompilation for some reason
 
 So never always trust your decompiler
 
-Now I just read the assembly portion that handles the encryption
+Now I just read the assembly portion that handles the mangling
 ![image](https://github.com/user-attachments/assets/319249c7-24d6-42d6-91a0-bf5a44696653)
 
 ```asm
@@ -385,3 +385,18 @@ inc:
   add     [rbp+var_14], 1
   add     [rbp+idx], 1
 ```
+
+The `is_odd` check basically does this:
+
+```
+enc = (0xba9d - tmp[i]) & 0xff
+```
+
+We can easily reverse that operation to this:
+
+```
+tmp[i] = -(enc - 0xba9d) & 0xff
+```
+
+
+
