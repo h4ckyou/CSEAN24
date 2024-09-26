@@ -248,4 +248,29 @@ __int64 __fastcall sub_134A(char *buf, int len)
 - Iterates through the length of the buf and based on if variable `var` is even or odd, it modifies the value of the buf at that current index then increments `var`
 - If `var` is an even number then it calls function `sub_1255` passing `tmp[i] ^ 0x40` as the first parameter and `4` as the second parameter then it does some subtraction thingy else it just does some subtraction thingy on `tmp[i]`
 
+From this I can't really tell what this is but we know for sure this is mangling our input so we rename it function `mangle`
+
+Now let us check what function `sub_1255` does
+![image](https://github.com/user-attachments/assets/4e6a9376-18ca-4c80-8eb5-a908cd326dbd)
+
+```c
+__int64 __fastcall sub_1255(int a1, char a2)
+{
+  return ((a1 << a2) | (a1 >> (8 - a2)));
+}
+```
+
+This just rotates the bits of `a1` to the left by `a2` positions. So we know this function is `rol`
+
+Now we know that the main function should look like this
+![image](https://github.com/user-attachments/assets/2933103b-8dd2-4bc3-875c-d8aab7e0500c)
+
+Where the encryption is as follows:
+- swap adjacent bytes
+- reverses the content
+- mangles the bytes
+
+Since our input is going to be passed into those following functions and compared against a hardcoded value, we need to reverse the operations of each function such that when we run it against the hardcoded value we would get the expected plaintext
+
+
 
