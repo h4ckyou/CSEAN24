@@ -67,7 +67,34 @@ for i in charset:
 print(decoded)
 ```
 
+Running that, we get a cyberchef link
+![image](https://github.com/user-attachments/assets/5067610d-4e03-4ae1-aba9-dfbb9268c606)
 
+Checking it shows this
+![image](https://github.com/user-attachments/assets/c1e22261-5d6b-403d-8558-1639ff39beb3)
+
+Cyberchef magic suggests to auto decode so we just let it do it's thing
+
+But then, it gets stucked here
+![image](https://github.com/user-attachments/assets/aab6781c-6d13-4607-8e8d-90d31385cd71)
+
+```
+*b}=*(cE*b#>6b4_}'h_2st`)a5`|K&`6'gH4=hB5%'_)b"H|uh=6?_J}pll
+```
+
+What is that? Well you can always try use [dcodefr](https://www.dcode.fr/cipher-identifier) to identify stuffs like this
+![image](https://github.com/user-attachments/assets/51df86f2-df1b-4d10-ba8e-7397ff4c9159)
+
+It suggests `Rot 47`
+
+Now we use Cyberchef to continue it's magic
+![image](https://github.com/user-attachments/assets/8abdd83d-f698-4688-b1d5-7dd199067a1a)
+
+And we get the flag!
+
+```
+Flag: csean-ctf{w45_th15_gu355y_0r_ju5t_t00_ez}24
+```
 
 
 
