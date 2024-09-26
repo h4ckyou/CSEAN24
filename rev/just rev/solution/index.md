@@ -333,11 +333,20 @@ So never always trust your decompiler
 Now let us look at the disassembly
 
 This is the graph view
-![image](https://github.com/user-attachments/assets/49c9fa09-cb52-4ac2-ad90-ae3399200098)
+![image](https://github.com/user-attachments/assets/90bd9e50-6b38-491b-8f22-9985da70add8)
 
+Now because we've gotten a general idea on what it does so we will take a look at only the encryption portion
 
+This is the part where it branches based on if `var` is even or odd
+![image](https://github.com/user-attachments/assets/688af4bf-8bbd-4317-9eb8-3ff8d0cbcb73)
 
-
+```c
+check:
+  mov     eax, [rbp+var]
+  and     eax, 1
+  test    eax, eax
+  jnz     short is_odd
+```
 
 
 
