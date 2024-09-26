@@ -129,8 +129,8 @@ The conclusion we can draw from what this function does is that it performs a sw
 
 Now let's see example:
 
-If we give it:
-- abcd, the result should give: badc
+If we input:
+- abcd, the function should modify our buf value to: badc
 
 We can confirm by setting a breakpoint before the call to the function and seeing the modified value after this function is called
 ![image](https://github.com/user-attachments/assets/29fc57ab-e685-4d30-a5b8-dcd335717e96)
@@ -138,5 +138,63 @@ We can confirm by setting a breakpoint before the call to the function and seein
 ![image](https://github.com/user-attachments/assets/e870ef4f-2a19-483f-8681-7b336b97d492)
 
 Now that we have understand what this function does, we just rename it and move to the next one
+
+For the second function here's the decompilation
+![image](https://github.com/user-attachments/assets/552243e6-a561-4694-842a-adb27033b2b5)
+
+After renaming and setting the right data type i got this
+
+```c
+__int64 __fastcall sub_128B(char *buf, int len)
+{
+  void *v2; // rsp
+  __int64 result; // rax
+  __int64 n; // [rsp+0h] [rbp-30h] BYREF
+  char *tmp; // [rsp+8h] [rbp-28h]
+  char *v8; // [rsp+18h] [rbp-18h]
+  __int64 v7; // [rsp+20h] [rbp-10h]
+  int j; // [rsp+28h] [rbp-8h]
+  int i; // [rsp+2Ch] [rbp-4h]
+
+  tmp = buf;
+  HIDWORD(n) = len;
+  v7 = len - 1LL;
+  v2 = alloca(16 * ((len + 15LL) / 0x10uLL));
+  v8 = &n;
+  for ( i = 0; i < SHIDWORD(n); ++i )
+    v8[i] = tmp[HIDWORD(n) - 1 - i];
+  for ( j = 0; ; ++j )
+  {
+    result = j;
+    if ( j >= SHIDWORD(n) )
+      break;
+    tmp[j] = v8[j];
+  }
+  return result;
+}
+```
+
+Now what does this do?
+- Again it creates a tmp variable which is a pointer to the buf passed as the first parameter
+- It then iterates through the length of buf and sets variable `v8[i]` to `tmp[n - 1 - i]`
+- Then it iterates again through the length of buf and sets `tmp[j]` to `v8[j]`
+
+From this we can conclude that this function reverses the content stored in the buf because that's just a basic implementation of how you can reverse a string
+
+Now let's see example:
+
+If we input:
+- abcd, the function should modify our buf value to: dcba
+
+Let's check this out
+
+I'll debug the function using badc as the flag value because when the first function is called, it should swap the adjacent bytes of badc, resulting in abcd hence making it match our expected example value
+![image](https://github.com/user-attachments/assets/df79feee-ea70-4776-9adb-4f7556492145)
+![image](https://github.com/user-attachments/assets/81e532b8-80a5-4ed0-a6d4-f593b5b017b5)
+![image](https://github.com/user-attachments/assets/82995780-a654-4cd9-9f05-f0fecc7a98b0)
+
+
+
+
 
 
