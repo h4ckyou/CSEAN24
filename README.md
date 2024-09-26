@@ -1,8 +1,7 @@
 <div align="center">
 
-# ![Banner][Banner]
 
-This repository hosts the official **source code** and **writeups** for the challenges from [CSEAN CTF 2024][CTFd Instance].
+This repository hosts the **source code** and **writeups** for the challenges from [CSEAN CTF 2024][CTFd Instance].
 
 ---
 
@@ -10,13 +9,15 @@ This repository hosts the official **source code** and **writeups** for the chal
 
 ## Challenges
 
-| Name                                                   | Author    | Difficulty | Solves |
-| ------------------------------------------------------ | --------- | ---------- | ------ |
-| [key](beginner/key)                                    | brosu     | beginner   | 388    |
-| [encryptor](beginner/encryptor)                        | 0xM4hm0ud | beginner   | 348    |
-| [Baby Pybash](beginner/Baby%20PyBash)                  | RJCyber   | beginner   | 211    |
-| [ZipZone](beginner/ZipZone)                            | rex       | beginner   | 173    |
-| [Modulus RSA](beginner/modulus-rsa)                    | aa.crypto | beginner   | 109    |
-| [cipher block clock](beginner/cipher%20block%20clock/) | notneB    | beginner   | 104    |
-| [shelltester](beginner/shelltester)                    | 0xM4hm0ud | beginner   | 96     |
-| [ticket-bot](beginner/ticket_bot)                      | Bex       | beginner   | 54     |
+| Name                                                   | Category            | Difficulty   | Solves |
+| ------------------------------------------------------ | ------------------  | ----------   | ------ |
+| [ChatGPT](misc/chatgpt)                                | Misc                | Easy         | 388    |
+| [DissKod](misc/disskod)                                | Misc                | Easy         | 348    |
+| [Guess The Flag](steg/guess%20the%20flag)              | Steganography       | Intermediate | 211    |
+| [Head](web/head)                                       | Web Exploitation    | Intermediate | 173    |
+| [SeeQL](web/seeql)                                     | Web Exploitation    | Advanced     | 109    |
+| [JFun](rev/jfun)                                       | Reverse Engineering | Easy         | 104    |
+| [DeeStrucTor](rev/deestructor)                         | Reverse Engineering | Easy         | 96     |
+| [Just Rev](rev/just%20rev)                             | Reverse Engineering | Intermediate | 54     |
+| [Super Hashing Algorithm](rev/super%20hashing%20algo)  | Reverse Engineering | Advanced     | 96     |
+| [Do Math](rev/do%20math)                               | Reverse Engineering | Extreme      | 54     |
