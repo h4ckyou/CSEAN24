@@ -324,13 +324,16 @@ x + 99 = -tmp[i]
 tmp[i] = -(x + 99)
 ```
 
-You can also do same for when `var` is even but spoiler after implementing your decryption it won't work?
+You can also do same for when `var` is even but spoiler!! after implementing your decryption it won't work if you go that way?
 
 The reason is because IDA didn't show the whole decompilation for some reason
 
 So never always trust your decompiler
 
-Ghidra in other hands does seem to get it well
+Now let us look at the disassembly
+
+This is the graph view
+![image](https://github.com/user-attachments/assets/49c9fa09-cb52-4ac2-ad90-ae3399200098)
 
 
 
