@@ -193,7 +193,12 @@ I'll debug the function using badc as the flag value because when the first func
 ![image](https://github.com/user-attachments/assets/81e532b8-80a5-4ed0-a6d4-f593b5b017b5)
 ![image](https://github.com/user-attachments/assets/82995780-a654-4cd9-9f05-f0fecc7a98b0)
 
+Cool, we confirmed what this function does now we just rename it and move on
 
+For the last function here's the decompilation
+![image](https://github.com/user-attachments/assets/dd98dabf-3f4c-48e2-aa20-f7e8e804d025)
+
+Yet again I renamed variable names and set the variables to the right data type
 
 
 
