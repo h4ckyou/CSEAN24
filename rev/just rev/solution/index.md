@@ -299,7 +299,7 @@ def ror(value, shift):
 
 Now how do we reverse the operation done based on if `var` is even or odd in the `mangle` function
 
-From looking at it at first it looks not too difficult to reverse
+From looking at it, it looks not too difficult to reverse
 
 For example when `var` is odd, this is the operation done
 
@@ -324,8 +324,13 @@ x + 99 = -tmp[i]
 tmp[i] = -(x + 99)
 ```
 
-You can also do same for when `var` is even:
+You can also do same for when `var` is even but spoiler after implementing your decryption it won't work?
 
+The reason is because IDA didn't show the whole decompilation for some reason
+
+So never always trust your decompiler
+
+Ghidra in other hands does seem to get it well
 
 
 
