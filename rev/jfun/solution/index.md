@@ -77,3 +77,10 @@ for hash in hashes:
 
 print(flag)
 ```
+
+Running it gives the flag
+![image](https://github.com/user-attachments/assets/8f22aa4e-7f54-46a1-ad1e-5ca70a85e032)
+
+```
+Flag: csean-ctf{h0p3_y0u_h4d_funnnnnn}24
+```
