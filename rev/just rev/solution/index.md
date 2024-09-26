@@ -74,3 +74,45 @@ Now we need to figure out exactly what the three function does to our input:
 - sub_128B(buf, len);
 - sub_134A(buf, len);
 
+
+For the first function here's the decompilation
+![image](https://github.com/user-attachments/assets/19c52fa6-ad03-4b1c-8658-5bb6efe4f1f2)
+
+This might look kinda hard to assimilate but from renaming function names and data types i got this
+
+```c
+__int64 __fastcall sub_1169(char *buf, int len)
+{
+  void *v2; // rsp
+  __int64 result; // rax
+  __int64 buf_len; // [rsp+0h] [rbp-30h] BYREF
+  char *tmp; // [rsp+8h] [rbp-28h]
+  char v6; // [rsp+16h] [rbp-1Ah]
+  char v7; // [rsp+17h] [rbp-19h]
+  char *v8; // [rsp+18h] [rbp-18h]
+  __int64 v9; // [rsp+20h] [rbp-10h]
+  int j; // [rsp+28h] [rbp-8h]
+  int i; // [rsp+2Ch] [rbp-4h]
+
+  tmp = buf;
+  HIDWORD(buf_len) = len;
+  v9 = len - 1LL;
+  v2 = alloca(16 * ((len + 15LL) / 0x10uLL));
+  v8 = &buf_len;
+  for ( i = 0; i < HIDWORD(buf_len) - 1; i += 2 )
+  {
+    v7 = tmp[i];
+    v6 = tmp[i + 1];
+    v8[i] = v6;
+    v8[i + 1] = v7;
+  }
+  for ( j = 0; ; ++j )
+  {
+    result = j;
+    if ( j >= SHIDWORD(buf_len) )
+      break;
+    tmp[j] = v8[j];
+  }
+  return result;
+}
+```
