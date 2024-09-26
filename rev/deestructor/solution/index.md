@@ -157,7 +157,6 @@ If you take your time to research about Destructors in C you should basically ge
 
 And the location of funtions which are called as destructors is the `.fini_array` section
 
-You can checkout [this](https://gist.github.com/x0nu11byt3/bcb35c3de461e5fb66173071a2379779#sections)
+You can check [this](https://gist.github.com/x0nu11byt3/bcb35c3de461e5fb66173071a2379779#sections) out
 
-So the goal would have been to check the `.fini_array` section to retrieve the function whch would be called as a destructor, then just repeat the same process of reading the assembly code above
-
+So the goal would have been to check the `.fini_array` section to retrieve the function whch would be called as a destructor, then just repeat the same process of reading the assembly code above and writing your solve
