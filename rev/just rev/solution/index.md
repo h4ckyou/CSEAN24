@@ -137,5 +137,6 @@ We can confirm by setting a breakpoint before the call to the function and seein
 ![image](https://github.com/user-attachments/assets/53da2231-f18c-49aa-9b33-917c0b9ca849)
 ![image](https://github.com/user-attachments/assets/e870ef4f-2a19-483f-8681-7b336b97d492)
 
+Now that we have understand what this function does, we just rename it and move to the next one
 
 
