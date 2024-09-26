@@ -38,8 +38,27 @@ You can just `CTRL + F`
 Ok our string is located in the `.rodata` section and when we double click it we should get this
 ![image](https://github.com/user-attachments/assets/80ebbf78-4460-4707-bdcb-679149e51ded)
 
+Now we check for `Cross Reference` to that string and doing that we should get this
+![image](https://github.com/user-attachments/assets/d9e1841c-e3d6-489b-a95c-e773d167f33c)
 
+We can see that function `sub_401805+4` executes an instruction which makes use of the string in that location
 
+Now we just double click on that 🙂
+![image](https://github.com/user-attachments/assets/a884bbba-e094-4ea6-81ab-f9b4d6324edb)
+
+This now, is the main function
+
+Press the almighty `F5` key to get the pseudocode (C like decompilation)
+![image](https://github.com/user-attachments/assets/ae0c5c3d-135f-41cc-99e2-e5c770966184)
+
+And again because this is stripped we can't tell which function is which
+
+But you can intuitively tell that `sub_404690` is functions `puts()`
+
+Now we just rename the functions!
+![image](https://github.com/user-attachments/assets/e4a20162-e7ef-4498-9fb8-90440897f2c3)
+
+That looks more like it!
 
 
 
