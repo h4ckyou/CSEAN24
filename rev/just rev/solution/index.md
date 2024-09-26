@@ -27,3 +27,44 @@ First:
 - Then it calls three functions passing the variable `s & v10` as argument
 - It then iterates through the length variable `s` and compares `s[i]` against a dword value stored at `dword_4040[i]`
 - If the comparism returns False it returns and print the error message "Wrong." else it prints the success message "Correct!"
+
+With that we get the general idea of the main function, so here's my renamed code
+
+```c
+__int64 __fastcall main(int a1, char **a2, char **a3)
+{
+  __int64 v3; // rax
+  __int64 v4; // rdx
+  __int64 v5; // rdx
+  __int64 v6; // rax
+  __int64 v8; // rax
+  char buf[72]; // [rsp+0h] [rbp-50h] BYREF
+  unsigned int len; // [rsp+48h] [rbp-8h]
+  int i; // [rsp+4Ch] [rbp-4h]
+
+  v3 = std::operator<<<std::char_traits<char>>(
+         &std::cout,
+         "Reversing is pain but can you find your way around this?",
+         a3);
+  std::ostream::operator<<(v3, &std::endl<char,std::char_traits<char>>);
+  std::operator<<<std::char_traits<char>>(&std::cout, "Flag: ", v4);
+  std::operator>><char,std::char_traits<char>>(&std::cin, buf);
+  len = strlen(buf);
+  sub_1169(buf, len);
+  sub_128B(buf, len);
+  sub_134A(buf, len);
+  for ( i = 0; i < len; ++i )
+  {
+    v5 = dword_4040[i];
+    if ( buf[i] != v5 )
+    {
+      v6 = std::operator<<<std::char_traits<char>>(&std::cout, "Wrong.", v5);
+      std::ostream::operator<<(v6, &std::endl<char,std::char_traits<char>>);
+      return 0LL;
+    }
+  }
+  v8 = std::operator<<<std::char_traits<char>>(&std::cout, "Correct!", v5);
+  std::ostream::operator<<(v8, &std::endl<char,std::char_traits<char>>);
+  return 0LL;
+}
+```
