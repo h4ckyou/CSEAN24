@@ -68,3 +68,9 @@ __int64 __fastcall main(int a1, char **a2, char **a3)
   return 0LL;
 }
 ```
+
+Now we need to figure out exactly what the three function does to our input:
+- sub_1169(buf, len);
+- sub_128B(buf, len);
+- sub_134A(buf, len);
+
