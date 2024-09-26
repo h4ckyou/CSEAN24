@@ -330,28 +330,8 @@ The reason is because IDA didn't show the whole decompilation for some reason
 
 So never always trust your decompiler
 
-Now let us look at the disassembly
-
-This is the graph view
-![image](https://github.com/user-attachments/assets/90bd9e50-6b38-491b-8f22-9985da70add8)
-
-Now because we've gotten a general idea on what it does so we will take a look at only the encryption portion
-
-This is the part where it branches based on if `var` is even or odd
-![image](https://github.com/user-attachments/assets/688af4bf-8bbd-4317-9eb8-3ff8d0cbcb73)
-
-```asm
-check:
-  mov     eax, [rbp+var]
-  and     eax, 1
-  test    eax, eax
-  jnz     short is_odd
-```
-
-
-
-
-
+I switched to Ghidra at this point because it has a nice Assembly View + Decompiled View 
+![image](https://github.com/user-attachments/assets/dfbc1a0e-c3bb-4241-89e8-faa1f5f44b46)
 
 
 
