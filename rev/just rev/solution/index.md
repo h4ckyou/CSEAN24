@@ -330,10 +330,58 @@ The reason is because IDA didn't show the whole decompilation for some reason
 
 So never always trust your decompiler
 
-I switched to Ghidra at this point because it has a nice Assembly View + Decompiled View 
-![image](https://github.com/user-attachments/assets/dfbc1a0e-c3bb-4241-89e8-faa1f5f44b46)
+Now I just read the assembly portion that handles the encryption
+![image](https://github.com/user-attachments/assets/319249c7-24d6-42d6-91a0-bf5a44696653)
 
+```asm
+check:
+  mov     eax, [rbp+var_14]
+  and     eax, 1
+  test    eax, eax
+  jnz     short is_odd
 
+is_odd:
+  mov     eax, [rbp+idx]
+  movsxd  rdx, eax
+  mov     rax, [rbp+tmp]
+  add     rax, rdx
+  movzx   eax, byte ptr [rax]
+  movsx   eax, al
+  mov     edx, 0BA9Dh
+  sub     edx, eax
+  movzx   eax, dl
+  mov     [rbp+var_34], eax
+  mov     eax, [rbp+var_34]
+  mov     ecx, eax
+  mov     rdx, [rbp+var_30]
+  mov     eax, [rbp+idx]
+  cdqe
+  mov     [rdx+rax], cl
 
+is_even:
+  mov     eax, [rbp+idx]
+  movsxd  rdx, eax
+  mov     rax, [rbp+tmp]
+  add     rax, rdx
+  movzx   eax, byte ptr [rax]
+  xor     eax, 40h
+  movsx   eax, al
+  mov     esi, 4
+  mov     edi, eax
+  call    rol
+  mov     edx, 0CAFDh
+  sub     edx, eax
+  movzx   eax, dl
+  mov     [rbp+var_38], eax
+  mov     eax, [rbp+var_38]
+  mov     ecx, eax
+  mov     rdx, [rbp+var_30]
+  mov     eax, [rbp+idx]
+  cdqe
+  mov     [rdx+rax], cl
+  jmp     short inc
 
-
+inc:
+  add     [rbp+var_14], 1
+  add     [rbp+idx], 1
+```
